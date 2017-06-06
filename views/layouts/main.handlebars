@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Blog</title>
+  <link rel='icon' href='/images/favicon.ico' type='image/x-icon'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="/css/site.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/article/list">Blog</a></li>
+        {{#if currentUser}}
+        <li><a href="/article/add">Add Article</a></li>
+        {{/if}}
+        {{#if isAdmin}}
+        <li><a href="/admin/list">Control Panel</a></li>
+        {{/if}}
+         {{#if currentUser}}
+        <li class="right">
+          <form id="logout-form" action="/users/logout" method="POST"></form>
+          <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+        </li>
+        <li class="right">Hi, {{currentUser.username}}</li>
+        {{else}}
+        <li class="right"><a href="/users/register">Register</a></li>
+        <li class="right"><a href="/users/login">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {{#if error}}
+      <div class="msg error-msg">{{error}}</div>
+      {{else if success}}
+      <div class="msg success-msg">{{success}}</div>
+      {{/if}} {{{body}}}
+    </div>
+  </main>
+
+  <footer>
+    <p>powered by &copy;Paco</p>
+  </footer>
+
+</body>
+
+</html>

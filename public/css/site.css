@@ -1,0 +1,79 @@
+h1 {
+  color: red
+}
+
+.menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+.menu li {
+  display: inline-block;
+  margin:25px 10px 15px 10px;
+}
+.menu li:after {
+  content: "\00a0";
+}
+
+.error{
+  color: red;
+}
+
+.right{
+  float: right;
+}
+
+.left{
+  float: left;
+}
+
+main{
+  min-height: 805px;
+}
+
+header{
+  background: #bababa;
+}
+
+footer{
+  padding: 10px;
+  text-align: center;
+  font-size: 0.8em;
+  background: #bababa;
+}
+
+.msg{
+  text-align: center;
+  font-size: 1.5em;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.error-msg{
+  background: lightcoral;
+}
+
+.success-msg{
+  background: lightgreen;
+}
+
+.paging{
+    list-style: none;
+    padding-left: 0;
+}
+
+.paging li{
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin-right: 3px;
+}
+
+.paging li a{
+  display: block;
+  padding: 5px;
+}
+
+.single-article p{
+  margin: 20px 0;
+}
